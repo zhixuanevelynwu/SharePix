@@ -1,0 +1,65 @@
+{% extends "sharepix/base.html" %} 
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <title>Social Feed</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div id="published-art-container">
+    <ul class="published-art">
+      {% for entry in arts %}
+      <li> 
+        <img 
+          id=myimage 
+          class="thumbnail" 
+          src="{% url 'published_art' entry.id %}"
+        </img>
+        <div class="modal-info">
+          <button class="button-like" onclick=like(this,{{entry.id}})>
+            <!-- {{entry.likes}} -->
+            &#9829;
+          </button>
+
+          <div>
+            <a href="{% url 'get_profile' entry.user.id %}">
+              {{entry.user.first_name}} {{entry.user.last_name}}
+            </a>
+          </div>
+        </div>
+      </li> 
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <image class="modal-content" id="img01"></image>
+  </div>
+  
+<script>
+  // Get the modal
+  var modalEle = document.querySelector(".modal");
+  var modalImage = document.querySelector(".modal-content");
+  var modalHeader = document.querySelector(".modal-header");
+
+  Array.from(document.querySelectorAll(".thumbnail")).forEach(item => {
+   item.addEventListener("click", event => {
+      modalEle.style.display = "block";
+      modalImage.src = event.target.src;
+      let text = document.querySelector(".thumbnail").getAttribute('src')
+      // modalHeader.setAttribute('href', document.querySelector(".thumbnail").getAttribute('src'))
+      // console.log(document.querySelector(".thumbnail").getAttribute('src'));
+   });
+  });
+  document.querySelector(".close").addEventListener("click", () => {
+    modalEle.style.display = "none";
+  });
+</script>
+
+<script src="/static/js/publish.js"></script>
+{% endblock %}

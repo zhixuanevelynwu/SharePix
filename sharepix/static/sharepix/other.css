@@ -1,0 +1,87 @@
+/* Profile general */
+#info_container {
+    margin: auto;
+    width: 40vw;
+    text-align: center;
+}
+#id_user_name {
+    font-size:30px;
+    /* Margin */
+    margin-top: 30px;
+}
+/* End profile general */
+
+/* User profile pic */
+#id_profile_pic {
+    height: 120px;
+    width: 120px;
+    /* Rounded border */
+    border: 2px solid #ccc;
+    border-radius: 100%;
+    box-sizing: border-box;
+}
+#profile_pic_container {
+    margin: auto;
+    width: 150px;
+    overflow: hidden;
+}
+/* End user profile pic */
+
+/* Update profile pic */
+#id_upload_image {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin: 10px;
+}
+/* End upload profile pic */
+
+/* Bio */
+#id_bio_input_text {
+    font-size: 18px;
+    width: 100%;
+    min-height: 60px;
+    line-height: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+#id_user_bio {
+    width: 100%;
+    min-height: 60px;
+    line-height: 30px;
+    padding: 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+/* End bio */
+
+/* Past works */
+#past-work-container {
+    /* Size */
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 40px;
+    padding-bottom: 0px;
+    /* Color & shape */
+    /* background-color: rgba(240, 240, 240, 0.511); */
+    border-radius: 30px;
+    /* Grid system */
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+.past-work {
+    margin: auto;
+    margin-bottom: 40px;
+    width: 150px;
+    height: 150px;
+    border-radius:10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#past-work-image {
+    width: 100%;
+}
+/* End past works */

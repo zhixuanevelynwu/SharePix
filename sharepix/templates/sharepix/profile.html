@@ -1,0 +1,71 @@
+{% extends "sharepix/base.html" %} {% block content %}
+<!-- User info: name, profile, bio, etc. -->
+<div id="info_container">
+  <!-- Display user name -->
+  <div id="id_user_name">{{user.first_name}} {{user.last_name}}</div>
+
+  <!-- Profile pic -->
+  <div id="profile_pic_container">
+    {% if not profile.picture %}
+    <image id="id_profile_pic" src="/static/images/default-profile.png"></image>
+    {% else %}
+    <image
+      id="id_profile_pic"
+      src="{% url 'profile_picture' profile.id%}"
+    ></image>
+    {% endif %}
+  </div>
+  <!-- End profile pic -->
+
+  <!-- Update profile info -->
+  <form
+    enctype="multipart/form-data"
+    method="post"
+    action="{% url 'profile' %}"
+  >
+    {% for field in form.visible_fields %}
+    <!-- Inputs -->
+    <tr>
+      <td>{{field}}</td>
+    </tr>
+    <!-- Display form error  -->
+    <td class="error">
+      {% for error in field.errors %} {{error}} {% endfor %}
+    </td>
+    {% endfor %}
+    <tr></tr>
+
+    {% csrf_token %}
+    <!-- Update button -->
+    <button id="id_update_profile_button">Update profile</button>
+  </form>
+  <!-- End update profile info -->
+</div>
+<!-- End user info -->
+
+<!-- Following -->
+<div id="following_container">
+  You are following
+  <ul>
+    {% for u in profile.following.all %}
+    <li id="id_profile_link_{{u.username}}">
+      <a href="{% url 'get_profile' u.id %}">
+        {{u.first_name}} {{u.last_name}}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- Past works -->
+{% if my_pixel_arts %}
+<div id="past-work-container">
+  {% for pixel_art in my_pixel_arts %}
+  <div class="past-work">
+      <img id=myimage class="thumbnail" src="{% url 'published_art' pixel_art.id %}"></img>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+<!-- End past works -->
+{% endblock %}

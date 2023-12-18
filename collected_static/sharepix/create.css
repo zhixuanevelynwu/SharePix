@@ -1,0 +1,90 @@
+/* This file contains styling only for the create page */
+/* Page style */
+#create-container {
+    display: flex;
+    margin:auto;
+    width:fit-content;
+    margin-top: 4vh;
+}
+/* End page style */
+
+/* Functional style */
+.active {
+    background-color: black;
+    color: white;
+}
+/* End functional style */
+
+/* Toolbox style */
+#toolbox-container {
+    width: 240px;
+    height: 600px;
+    z-index: 1;
+    margin-top: 25px;
+}
+#toolbox-container button {
+    width: 90%;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/* End toolbox style */
+
+/* Canvas style */
+#canvas-container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#canvas {
+    position: absolute;
+    border: 0px;
+    width: 610px;
+    height: 610px;
+    top: -10px;
+    left: -10px;
+}
+/* End canvas style */
+
+/* Palette style */
+#palette-container {
+    position: relative;
+    width: 240px;
+    height: 600px;
+    z-index: 1;
+}
+#button-container {
+    position:absolute;
+    width: 240px;
+    bottom: 10px;
+}
+#button-container button {
+    width: 90%;
+    height: 50px;
+    margin-bottom: 10px;
+}
+#color-input {
+    width: 70%;
+}
+#color_btn {
+    margin-top: 25px;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+#saved-color-container {
+    width: 200px;
+    margin:auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.saved_color {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color:rgb(230, 230, 230);
+}
+/* End palette style */

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/static/sharepix/base.css" />
+    <link rel="stylesheet" href="/static/sharepix/create.css" />
+    <link rel="stylesheet" href="/static/sharepix/profile.css" />
+    <link rel="stylesheet" href="/static/sharepix/socialfeed.css" />
+    <link rel="stylesheet" href="/static/sharepix/other.css" />
+    <title>Share Pix</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Any contents of the page go inside this div -->
+      <div id="content">{% block content %} {% endblock %}</div>
+
+      <!-- Header contains site logo, nav links, etc. -->
+      <div id="header">
+        <div id="site-name">Share Pix</div>
+        <div id="nav-container">
+          <a href="/" class="nav-link">Social Feed</a>
+          |
+          <a href="{% url 'create'%}" class="nav-link">Create</a>
+          |
+          <a href="{% url 'profile'%}" class="nav-link">Profile</a>
+          <!-- |
+          <a href="{% url 'get_profile' 1%}" class="nav-link">Other</a> -->
+          |
+          <a href="{% url 'logout' %}"><button>Logout</button></a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div id="footer">
+        <div id="footer-text">© Web App 2022</div>
+    </div>
+  </body>
+</html>

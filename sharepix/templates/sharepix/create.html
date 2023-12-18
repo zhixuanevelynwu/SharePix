@@ -1,0 +1,50 @@
+{% extends "sharepix/base.html" %} {% block content %}
+<div id="create-container">
+  <!-- Toolbox -->
+  <div id="toolbox-container">
+    <button id="paint_btn" onclick="paint()" class="active">Paint brush</button>
+    <button id="erase_btn" onclick="erase()">Erase</button>
+    <button id="fill_btn" onclick="fill()">Fill</button>
+    <button id="clear_btn" onclick="eraseAll()">Clear</button>
+    <button id="last_btn" onclick="lastStep()">Last step</button>
+    <button id="next_btn" onclick="nextStep()">Next step</button>
+    <button id="hide_btn" onclick="hideGrids()">Hide grid</button>
+  </div>
+
+  <!-- The canvas -->
+  <div id="canvas-container">
+    <iframe
+      id="canvas"
+      src="/static/sharepix/canvas.html"
+      scrolling="no"
+    ></iframe>
+  </div>
+
+  <!-- Color palette -->
+  <div id="palette-container">
+    <!-- Color picker -->
+    <button id="color_btn" onclick="colorPicker()">Color picker</button>
+    <!-- Select color -->
+    <div id="color-input-container">
+      <input
+        id="color-input"
+        onchange="updateColor()"
+        value="#FF8A8AFF"
+        data-jscolor="{}"
+      />
+    </div>
+    <!-- Export and post works -->
+    <div id="button-container">
+      <button id="export_btn" onclick="exportPNG()">Export</button>
+      <button id="publish_btn" onclick="publishWork()">Publish</button>
+    </div>
+  </div>
+</div>
+
+<!-- Load JS libraries -->
+<script src="/static/js/STATE.js"></script>
+<script src="/static/js/publish.js"></script>
+<script src="/static/js/tools.js"></script>
+<script src="/static/js/jscolor.js"></script>
+<script src="/static/js/palette.js"></script>
+{% endblock %}
