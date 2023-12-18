@@ -1,4 +1,4 @@
-# f22_team_15
+# SharePix
 ### JS Libraries
 - [jscolor](https://jscolor.com/)
 - [p5.js](https://p5js.org/)
