@@ -16,7 +16,7 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> Online platform dedicated to pixel art, providing a user-friendly environment for creating, showcasing, and collaboratively engaging with pixel art enthusiasts of all skill levels.
     <br> 
 </p>
 
